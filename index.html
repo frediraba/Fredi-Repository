@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lapse Nime Generaator</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Viide CSS failile -->
+</head>
+<body>
+    <div class="container">
+        <h1>Lapse Nime Generaator</h1>
+        <form id="nameForm">
+            <div class="form-group">
+                <label for="gender">Sugu</label>
+                <select id="gender">
+                    <option value="Any">Kõik</option>
+                    <option value="Male">Mees</option>
+                    <option value="Female">Naine</option>
+                </select>
+            </div>
+            
+            <!-- Nime pikkuse vahemiku liugurid ühel joone peal -->
+            <div class="form-group">
+                <label for="nameLength">Nime pikkus: <span id="nameLengthValue">3 - 10</span></label>
+                <div class="range-slider">
+                    <input type="range" id="minLength" min="3" max="10" step="1" value="3" oninput="updateNameLength()">
+                    <input type="range" id="maxLength" min="3" max="10" step="1" value="10" oninput="updateNameLength()">
+                </div>
+            </div>
+
+            <!-- Valik nime esimese tähe järgi -->
+            <div class="form-group">
+                <label for="startsWith">Esimene täht (valikuline)</label>
+                <input type="text" id="startsWith" maxlength="1" placeholder="Esimene täht">
+            </div>
+
+            <div class="form-group">
+                <label for="country">Riik</label>
+                <select id="country">
+                    <option value="Any">Kõik</option>
+                    <option value="Estonia">Eesti</option>
+                    <option value="Finland">Soome</option>
+                    <option value="Sweden">Rootsi</option>
+                    <option value="Germany">Saksamaa</option>
+                    <option value="France">Prantsusmaa</option>
+                    <option value="USA">USA</option>
+                    <option value="Italy">Itaalia</option>
+                    <option value="Spain">Hispaania</option>
+                    <option value="Norway">Norra</option>
+                    <option value="Denmark">Taani</option>
+                    <option value="UK">Suurbritannia</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="popularity">Populaarsus</label>
+                <select id="popularity">
+                    <option value="Any">Kõik</option>
+                    <option value="Popular">Populaarne</option>
+                    <option value="Rare">Haruldane</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn" onclick="generateName()">Genereeri Nimi</button>
+        </form>
+        <div class="result" id="resultBox"></div>
+    </div>
+    <script src="script.js"></script> <!-- Viide JavaScripti failile -->
+</body>
+</html>
