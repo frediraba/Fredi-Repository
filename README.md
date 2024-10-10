@@ -1,1 +1,1 @@
-My first project when i was just started.
+My first project when I just started.
